@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{month | title}}{% endblock title %}
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'challanges/challanges.css' %}">
+<link rel="stylesheet" href="{% static 'challanges/challange.css' %}">
+<link rel="stylesheet" href="{% static 'challanges/partials/nav.css' %}">
+{% endblock css_files %}
+{% block content %}
+        {% include './partials/navbar.html'%}
+        <h1>{{month}} month challange</h1>
+            {% if text is not None%}
+        <h2>{{text}}</h2>
+            {% else %}
+        <p>There is not challange for the month</p>
+            {% endif %}
+{% endblock content %}
